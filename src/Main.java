@@ -28,6 +28,9 @@ public class Main {
                 case 1 -> service.addMedikament(scanner);
                 case 2 -> service.editMedikament(scanner);
                 case 3 -> service.deleteMedikament(scanner);
+                case 4 -> service.addPatienten(scanner);
+                case 5 -> service.editCustomer(scanner);
+                case 6 -> service.deleteCustomer(scanner);
                 case 10 -> service.viewAllMedikaments();
         }
     } while (choice != 12);

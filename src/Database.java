@@ -39,6 +39,16 @@ public class Database {
     public Medikamente findMedikamentByName(String name) {
         return medikamente.stream().filter(p -> p.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
     }
+
+    public void addPatient(Patienten patient) {
+        patienten.add(patient);
+    }
+
+    public boolean deletePatient(int id) {
+        return patienten.removeIf(c -> c.getId() == id);
+    }
+
+
 }
 
 

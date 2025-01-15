@@ -1,5 +1,8 @@
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+
 
 public class HospitalService {
     private final Database database = new Database();
@@ -59,6 +62,38 @@ public class HospitalService {
             System.out.println("\nAlle Medikamente:");
             products.forEach(product ->
                     System.out.println("Name: " + product.getName() + ", Preis: " + product.getPrice() + ", Saison: " + product.getKrankheit())
+            );
+        }
+    }
+
+    public void addPatient(Scanner scanner) {
+        System.out.println("Patient hinzufügen:");
+        System.out.print("ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Diagnose: ");
+        String diagnose = scanner.nextLine();
+        System.out.print("Krankheit: ");
+        String krankheit = scanner.nextLine();
+        System.out.print("Alter: ");
+        String alter = scanner.nextLine();
+        System.out.print("Medikament: ");
+        String medikament = scanner.nextLine();
+
+
+        database.addPatient(new Patienten(id, name, diagnose, krankheit, alter, medikament));
+    }
+
+    public void viewAllPatients() {
+        List<Patienten> customers = database.getPatienten();
+        if (customers.isEmpty()) {
+            System.out.println("Es gibt keine Patienten im System.");
+        } else {
+            System.out.println("\nAlle Patienten:");
+            customers.forEach(customer ->
+                    System.out.println()
             );
         }
     }
