@@ -34,5 +34,6 @@ public class Main {
                 case 10 -> service.viewAllMedikaments();
         }
     } while (choice != 12);
+
 }
 }

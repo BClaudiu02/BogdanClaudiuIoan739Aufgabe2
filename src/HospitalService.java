@@ -83,6 +83,7 @@ public class HospitalService {
         String medikament = scanner.nextLine();
 
 
+
         database.addPatient(new Patienten(id, name, diagnose, krankheit, alter, medikament));
     }
 
